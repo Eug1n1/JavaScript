@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function welcom(){
+            alert("Вас приветствует учебный центр");
+            name = prompt("Введите имя: ", 'Имя');
+            alert("Добро пожаловать на наши курсы " + name);
+            if(confirm("Хотите стать Web-дизайнером?")){
+                alert("Учите стили CSS и JavaScript!");
+            }else{
+                alert("Упускаете время!")
+            }
+        }
+        function concat(){
+            x = prompt("Введите 1 число", "число");
+            y = prompt("Введите 1 число", "число");
+            document.write('x' + '+' + 'y' + '=' + (+(x) + +(y)) + '<br>');
+            document.write('"x"' + '+' + '"y"' + '=' + (x + y) + '<br>');
+            document.write('"x"' + '+' + 'y' + '=' + (x + +(y)) + '<br>');
+            document.write('x' + '+' + '"y"' + '=' + (+(x) + y) + '<br>');
+        }
+        function sum(){
+            let x = 10;
+            let y = 5;
+            let res = (35 * y - 25 * x) / 5 + 232;
+            let res_2 = (8 * y / x + 5 * x / y - 43) * 6;
+            alert('(35y - 25x) / 5 + 232 = ' + res);
+            alert('8 * y / x + 5 * x / y – 43) * 6 = ' + res_2);
+            alert('result = ' + (res % res_2));
+        }
+        function pypok_kirila(){
+            x = prompt("Введите число" + "число");
+            if((x < 20 || x > 40) && x != 15 && x % 5 == 0){
+                alert("Правильное значение");
+            }else{
+                alert("Не правильное значение");
+            }
+        }
+        function nozdrya_nikitbl(){
+            x = prompt("Введите число", "число")
+            y = prompt("Введите число", "число")
+            if(x > y){
+                alert("x > y");
+            }else if(x == y){
+                alert("x = y");
+            }else{
+                alert("x < y");
+            }
+        }
+        function keybord_dont_ravno_snowbord(){
+            x = parseInt(prompt("Введите номер дня недели", "число"), 10);
+            switch(x){
+                case 1: alert("Понедельник"); break;
+                case 2: alert("Вторник"); break;
+                case 3: alert("Среда"); break;
+                case 4: alert("Четверг"); break;
+                case 5: alert("Пятница"); break;
+                case 6: alert("Суббота"); break;
+                case 7: alert("Воскресенье"); break;
+            }
+        }
+        function My_book_have_great_look_Gbl_Gbl(){
+        try {
+            a;
+        }catch (e) {
+            alert("Возникла ERROR!!!!");
+        }
+        }
+    </script>
+    <input type="button" value="1" onclick="welcom()">
+    <input type="button" value="2" onclick="concat()">
+    <input type="button" value="3" onclick="sum()">
+    <input type="button" value="4" onclick="pypok_kirila()">
+    <input type="button" value="5" onclick="nozdrya_nikitbl()">
+    <input type="button" value="6" onclick="keybord_dont_ravno_snowbord()">
+    <input type="button" value="7" onclick="My_book_have_great_look_Gbl_Gbl()">
+</body>
+</html>
