@@ -81,3 +81,7 @@ function two(){
 
     document.writeln('ArrayArr.length = ' + ArrayArr.length)
 }
+
+function three(){
+    
+}
