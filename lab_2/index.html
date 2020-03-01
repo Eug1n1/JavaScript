@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <script>
@@ -96,7 +97,7 @@
                 ar = parseFloat(ar.toFixed(2));
                 len = 2 * Math.PI * a;
                 len = parseFloat(len.toFixed(2));
-                document.write("<tr>" + "<td>" + a + "</td>" + "<td>" + ar + "</td>" + "<td>" + len + "</td>" + "</tr>");
+                document.write("<tr>" + "<td class=\"td_a\">" + a + "</td>" + "<td>" + ar + "</td>" + "<td>" + len + "</td>" + "</tr>");
             }while(a < b)
             document.write("</table>")
         }
