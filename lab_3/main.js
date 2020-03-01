@@ -31,5 +31,53 @@ function first(){
 }
 
 function two(){
-    Arr = new Array('pow', 'pop', 'push', 'shift', 'tound', 'floor', 'sline', 'sort')
+
+    Arr = new Array('pow', 'pop', 'push', 'shift', 'round', 'floor', 'slice', 'sort')
+
+    document.writeln('Arr = ')
+    for(i = 0; i < Arr.length; i++){
+        document.writeln(Arr[i] + ' ');
+    }
+    document.writeln('<br>');
+    
+    document.writeln('Arr.length = ' + Arr.length);
+
+    document.writeln('<br>');
+
+    MathArr = new Array();
+    ArrayArr = new Array();
+
+    MathInd = 0;
+    ArrInd = 0;
+
+    for (i = 0; i < Arr.length; i++){
+        if(Arr[i] == 'pow' || Arr[i] == 'round' || Arr[i] == 'floor'){
+            MathArr[MathInd] = Arr[i]; 
+            MathInd++;
+        }else{
+            ArrayArr[ArrInd] = Arr[i];
+            ArrInd++;
+        }
+    }
+
+    MathArr.unshift('PI');
+    ArrayArr.push('length');
+
+    document.writeln('MathArr = ')
+    for(i = 0; i < MathArr.length; i++){
+        document.writeln(MathArr[i] + ' ');
+    }
+    document.writeln('<br>');
+    
+    document.writeln('MathArr.length = ' + MathArr.length);
+
+    document.writeln('<br>');
+
+    document.writeln('ArrayArr = ')
+    for(i = 0; i < ArrayArr.length; i++){
+        document.writeln(ArrayArr[i] + ' ');
+    }
+    document.writeln('<br>');
+
+    document.writeln('ArrayArr.length = ' + ArrayArr.length)
 }
