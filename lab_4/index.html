@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .f_task{
+            background-color: rgb(255, 225, 170);
+            margin: 0px 20px;
+            padding: 0;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, .1);
+        }
+        .s_task{
+            background-color: rgb(189, 253, 213);
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, .1);
+        }
+        .t_task{
+            background-color: rgb(246, 212, 255);
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, .1);
+        }
+    </style>
+</head>
+<body>
+    <div class="f_task">
+        <script>
+            function Group(Number, Speciality, amount){
+                this.Number = Number;
+                this.Speciality = Speciality;
+                this.amount = amount;
+
+                this.addStudent = function(amount){
+                    this.amount += amount;
+                }
+
+                this.subStudent = function(amount){
+                    this.amount -= amount;
+                }
+            }
+
+            gr_1 = new Group(5, 'ПОИТ', 20);
+            gr_2 = new Group(3, 'ИСИТ', 22);
+            gr_3 = new Group(7, 'ПОИТ', 15);
+
+            gr_1.addStudent(10);
+            gr_2.addStudent(8);
+            gr_3.addStudent(3);
+
+            gr_1.subStudent(1);
+            gr_2.subStudent(2);
+            gr_3.subStudent(1);
+
+            document.write('В группе номер ' + gr_1.Number+ ': ' + gr_1.amount + ' студентов.<br>');
+            document.write('В группе номер ' + gr_2.Number+ ': ' + gr_2.amount + ' студентов.<br>');
+            document.write('В группе номер ' + gr_3.Number+ ': ' + gr_3.amount + ' студентов.<br>');
+        </script>
+    </div>
+
+    <div class="s_task">
+        <script>
+            function Student(Name, Surname, Physics, Maths, IT){
+                this.Name = Name;
+                this.Surname = Surname;
+                this.Physics = Physics;
+                this.Maths = Maths;
+                this.IT = IT;
+
+                this.Print = function(){
+                    document.write('Surname: ' + this.Surname + '<br>');
+                    document.write('Name: ' + this.Name);
+                }
+
+                this.Average = function(){
+                    document.write('Average mark: ' + ((this.Physics + this.Maths + this.IT) / 3).toFixed(1));
+                }
+            }
+
+            stud1 = new Student('Evgeniy', 'Shumskiy', 4, 5, 10);
+            stud2 = new Student('Vladusha', 'Savchenko', 6, 5, 8);
+            stud3 = new Student('Nazurik', 'Ulasevich', 5, 5, 7);
+
+            stud1.Print();
+            document.write('<br>');
+            stud1.Average();
+            document.write('<br><br>');
+
+            stud2.Print();
+            document.write('<br>');
+            stud2.Average();
+            document.write('<br><br>');
+
+            stud3.Print();
+            document.write('<br>');
+            stud3.Average();
+
+            Student.prototype.Group = this.Group;
+            stud1.Group = 5;
+            stud2.Group = 5;
+            stud3.Group = 5;
+
+            document.write('<br><br>');
+
+            stud1.Print();
+            document.write('<br>');
+            stud1.Average();
+            document.write('<br>Group: ' + stud1.Group + '<br>');
+            document.write('<br><br>');
+
+            stud2.Print();
+            document.write('<br>');
+            stud2.Average();
+            document.write('<br>Group: ' + stud2.Group + '<br>');
+            document.write('<br><br>');
+
+            stud3.Print();
+            document.write('<br>');
+            stud3.Average();
+            document.write('<br>Group: ' + stud3.Group + '<br>');
+        </script>
+    </div>
+
+    <div class="t_task">
+        <script>
+            Arr = new Array('pow', 'pop', 'push', 'shift', 'round', 'floor', 'slice', 'sort');
+
+            document.write(Arr);
+
+            document.write('<br>');
+
+            delete(Arr[2]);
+            document.write(Arr);
+
+            document.write('<br>');
+            document.write('Arr[2]: ' + (1 in Arr));
+            document.write('<br>');
+            document.write('Print in Student: ' + ('Print' in stud1));
+            document.write('<br>');
+            document.write('Delete in Student: ' + ('Delete' in stud1));
+
+            document.write('<br><br>');
+
+            document.write('stud1 is an Array: ' + (stud1 instanceof Array));
+            document.write('<br>');
+            document.write('stud1 is a String: ' + (stud1 instanceof String));
+            document.write('<br>');
+            document.write('stud1 is an Object: ' + (stud1 instanceof Object));
+
+            document.write('<br><br>');
+
+            function f5(){
+                return 5;
+            }
+
+            document.write('f5 is ' + typeof(f5))
+            document.write('<br>');
+            document.write('Student is ' + typeof(stud1))
+            document.write('<br>');
+            document.write('Arr is ' + typeof(Arr))
+            document.write('<br>');
+            document.write('Student.Name is ' + typeof(stud1.Name))
+            document.write('<br>');
+            document.write('Student.Maths is ' + typeof(stud1.Maths))
+            document.write('<br>');
+            document.write('Student.IT is ' + typeof(stud1.IT))
+        </script>
+    </div>
+</body>
+</html>
