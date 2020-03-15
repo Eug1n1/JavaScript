@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <b></b>
+    <span id="span3">zdarova</span>
+    <div class="f_task">
+        <script>
+            var str = "";
+	        for (var i = 0; i < document.all.length; i++) {
+		        let list_childs = document.all[i].tagName;
+			    str += list_childs + " " + i + "<br>";
+	        }
+            document.write(str);
+        </script>
+    </div>
+    <div class="s_task">
+        <script>
+            for(var i=0; i < document.body.childNodes.length; i++){
+                if(document.body.childNodes[i].nodeType == 1){
+                    document.write(document.body.childNodes[i].tagName.toLowerCase() + '<br>');
+                } 
+            } 
+        </script>
+    </div>
+    <div class="t_task">
+        <script>
+            span1 = document.all[7].innerHTML;
+            document.write(span1 + '<br>');
+
+            span2 = document.getElementsByTagName('span')[0].innerHTML
+            document.write(span2 + '<br>');
+
+            span3 = document.getElementById('span3').innerHTML;
+            document.write(span3 + '<br>');
+        </script>
+    </div>
+    <div class="f_task">
+        <script>
+            mark1 = parseInt(document.getElementById('mark1').innerHTML);
+            mark2 = parseInt(document.getElementById('mark1').innerHTML);
+            mark3 = parseInt(document.getElementById('mark1').innerHTML);
+            mark4 = parseInt(document.getElementById('mark1').innerHTML);
+            mark5 = parseInt(document.getElementById('mark1').innerHTML);
+
+            avg = (mark1 + mark2 + mark3 + mark4 + mark5) / 5;
+
+            span = document.getElementsByTagName('span')[1].innerHTML
+            span += ' ' + avg;
+        </script>
+    </div>
+</body>
+</html>
