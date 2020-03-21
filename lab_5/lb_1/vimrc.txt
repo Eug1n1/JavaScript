@@ -1,0 +1,229 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+Plugin 'junegunn/gv.vim'
+
+Plugin 'tpope/vim-surround'
+
+
+Plugin 'tomtom/tcomment_vim'
+
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'airblade/vim-gitgutter'
+
+Plugin 'easymotion/vim-easymotion'
+
+Plugin 'terryma/vim-multiple-cursors'
+
+Plugin 'ctrlpvim/ctrlp.vim'
+
+Plugin 'jpo/vim-railscasts-theme'
+
+Plugin 'scrooloose/nerdTree'
+
+Plugin 'vim-scripts/indentpython.vim'
+
+Plugin 'vimwiki/vimwiki'
+
+" gs
+Plugin 'christoomey/vim-sort-motion'
+
+Plugin 'tomasr/molokai'
+
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+Plugin 'pearofducks/ansible-vim'
+
+" :Tabularize
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown' "better markdown support
+
+
+" better cooperation with tmux
+Plugin 'christoomey/vim-tmux-navigator'
+
+" gutter for marks
+Plugin 'kshenoy/vim-signature'
+
+" Vim Plugin for switching between companion source files (e.g. .h and .cpp)
+Plugin 'derekwyatt/vim-fswitch'
+
+Plugin 'rhysd/vim-clang-format'
+Plugin 'sbdchd/neoformat'
+
+" session management
+Plugin 'tpope/vim-obsession'
+Plugin 'dhruvasagar/vim-prosession'
+Plugin 'gikmx/ctrlp-obsession'
+
+" vim abolish does three things,
+" :Abolish {despa,sepe}rat{e,es,ed,ing,ely,ion,ions,or}  {despe,sepa}rat{}
+" :Subvert/blog{,s}/post{,s}/g
+" coercion - crs, crc change to snake case,
+"              change to camel case, cru upper case
+Plugin 'tpope/vim-abolish'
+
+" Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'kracejic/snippetinabox.vim'
+
+Plugin 'scrooloose/syntastic'
+
+Plugin 'majutsushi/tagbar'
+
+Plugin 'joereynolds/gtags-scope'
+
+" nice search in files
+Plugin 'dyng/ctrlsf.vim'
+" :FS [pattern]
+
+
+" search with :Ack [options] {pattern] [{directories}]
+Plugin 'mileszs/ack.vim'
+
+" :Dox command generates stub for doxygen doc in C++, etc
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+
+" :Search :SearchBuffers :SearchReset :SearchBuffersReset
+" <Leader>*
+Plugin 'vim-scripts/MultipleSearch'
+
+" fast searching
+" Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+
+" ga / gaip= align in paragraph around char =
+Plugin 'junegunn/vim-easy-align'
+
+" :ColorToggle
+Plugin 'lilydjwg/colorizer'
+
+" Syntaxes for a lot of languages
+Plugin 'sheerun/vim-polyglot'
+
+" :DevDocs ---
+Plugin 'rhysd/devdocs.vim'
+
+Plugin 'vim-scripts/visual-increment'
+
+" :Delete, :Unlink, :Move, :Rename, :Chmod, :Mkdir, :Find, :Locate, :SudoWrite, :SudoEdit
+Plugin 'tpope/vim-eunuch'
+
+"Run interactive:
+":DB sqlite:myfile.sqlite3
+"
+"Run commands
+":DB sqlite:myfile.sqlite3 select count(*) from widgets
+":DB redis:/// CLIENT LIST
+"
+"Save DBs locations
+":DB g:prod = postgres://user:pass@db.example.com/production_database
+":DB g:prod drop table users
+"
+"Give a range to run part or all of the current buffer as a query.
+":%DB mysql://root@localhost/bazquux
+Plugin 'tpope/vim-db'
+
+Plugin 'Yggdroot/indentLine'
+
+Plugin 'skywind3000/asyncrun.vim'
+
+" New autocomplete
+" Async support
+Plugin 'prabirshrestha/async.vim'
+" Async autocompletion for Vim 8 and Neovim with |timers|.
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/asyncomplete-file.vim'
+" Provide Language Server Protocol autocompletion source for asyncomplete.vim and vim-lsp.
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
+" Async Language Server Protocol plugin for vim8 and neovim.
+Plugin 'prabirshrestha/vim-lsp'
+" Add suport for languages
+Plugin 'mattn/vim-lsp-settings'
+" Support snippets
+" Plugin 'thomasfaingnaert/vim-lsp-snippets'
+" Plugin 'thomasfaingnaert/vim-lsp-ultisnips'
+
+
+" Plugin 'artur-shaik/vim-javacomplete2'
+
+
+let g:colorizer_startup = 0
+
+
+Plugin 'kracejic/themeinabox.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+set nobackup
+set noswapfile
+set encoding=utf-8 " Кодировка файлов по умолчанию
+set fileencodings=utf8,cp1251
+
+set clipboard=unnamed
+set ruler
+
+set visualbell t_vb=
+
+set tabstop=4 
+set shiftwidth=4
+set smarttab
+set expandtab "Ставим табы пробелами
+set softtabstop=4 "4 пробела в табе
+
+set autoindent
+
+set mousehide "Спрятать курсор мыши когда набираем текст
+set mouse=a "Включить поддержку мыши
+set termencoding=utf-8 "Кодировка терминала
+set novisualbell "Не мигать 
+set t_vb= "Не пищать! (Опции 'не портить текст', к сожалению, нету)
+" Удобное поведение backspace
+set backspace=indent,eol,start whichwrap+=<,>,[,]
+" Вырубаем черточки на табах
+set showtabline=1
+
+syntax on

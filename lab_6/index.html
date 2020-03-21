@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="f_task">
+                <input type="button" value="new" onclick="newW()">
+                <input type="button" value="del" onclick="del()">
+                <input type="button" value="print" onclick="writeW()">
+        <script>
+
+            windows = new Array();
+            ind = 0;
+            
+            function newW(){
+                windows[ind] = window.open('', ind);
+                ind++;
+            }
+
+            function del(){
+                delInd = prompt('Enter index:');
+                windows[delInd].close();
+            }
+
+            function writeW(){
+                indw = prompt();
+                windows[parseInt(indw)].document.write('Это текст<br>');
+                windows[parseInt(indw)].document.write('Имя окна: ' + windows[indw].name );
+            }
+            var s = '<table border="1px">';
+            s += "<tr><td>Имя браузера</td><td>" + navigator.appVersion ; "</td></tr>";
+            s += "<tr><td>Название браузера</td><td>" + window.navigator.appName ; "</td></tr>";
+            s += "<tr><td>Кодовое название браузера</td><td>" + navigator.appCodeName ; "</td></tr>";
+            s += "<tr><td>OC</td><td>" + navigator.platform; "</td></tr>";
+            s += "<tr><td>Поддержка Java</td><td>" + navigator.javaEnabled(); "</td></tr>";
+            s += "<tr><td>Ширину экрана</td><td>" + screen.width; "</td></tr>";
+            s += "<tr><td>Высота экрана</td><td>" + screen.height; "</td></tr>";
+            s += "<tr><td>Глубина цвета</td><td>" + screen.colorDepth; "</td></tr>";
+            s += "<tr><td>Количество посещённых</td><td>" + History.length; "</td></tr>";
+            s += "<tr><td>URL</td><td>" + window.location.href; "</td></tr>";
+            s += "<tr><td>Путь к загруженному документу</td><td>" +  window.location.pathname; "</td></tr>";
+            s += "<tr><td>Имя домена</td><td>" +  window.location.host; "</td></tr>";
+
+            document.write(s + "</table>");
+        </script>
+    </div>
+</body>
+</html>
