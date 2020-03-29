@@ -1,70 +1,67 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <script>
-        function printSelected() {
-            let selectedElements = new Array();
-            let ul;
-            selectedElements.push(document.forms[0].elements.specialties.value);
-            selectedElements.push(document.forms[0].elements.class.value);
-            
-            addElement('p', document.forms[0].elements[0].value);
-            addElement('p', `Студент ${document.all.surname.value} ${document.all.name.value} специальность ${selectedElements[0]} курс ${selectedElements[1]} должен сдавать следующие предметы:`);
-    
-            ul = addElement('ul');
-            for (let subject of document.all.subjects)
-                if (subject.checked) {
-                    addElement('li', subject.value, ul)
-                    selectedElements.push(subject.value);
-                }
-    
-            let select = addElement('select', '', addElement('form'));
-            select.disabled = true;
-            select.size = selectedElements.length;
-            for (el of selectedElements) {
-                addElement('option', el, select);
-            }
-    }
-    </script>
-</head>
-<body>
-    <form onsubmit="printSelected()">
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <br><br>
-        <input type="text" name="name" placeholder="Имя">
-        <br>
-        <input type="text" name="surname" placeholder="Фамилия">
-        <br>
-        <b>Специальность:<b>
-        <select name="" id="">
-            <option value="ПОИТ">ПОИТ</option>
-            <option value="ДЭВИ">ДЭВИ</option>
-            <option value="ИСИТ">ИСИТ</option>
-            <option value="ПОИБМС">ПОИБМС</option>
-        </select>
-        <p><b>Курс:</b></p>
-        <label name="cheker">
-            <input type="radio" value="1">1
-            <input type="radio" value="2">2 
-            <input type="radio" value="3">3
-            <input type="radio" value="4">4
-        </label>
+<html lang="en">
 
-        <br><br>
-        <p><b>Предметы:</b></p>
-        <input type="checkbox" name="" id="">
-        <b>ОАП</b>
-        <input type="checkbox" name="" id="">
-        <b>ОИТ</b>
-        <input type="checkbox" name="" id="">
-        <b>История</b>
-        <input type="checkbox" name="" id="">
-        <b>Физика</b>
-        <input type="checkbox" name="" id="">
-        <b>Математика</b>
-        <input type="submit" value="submit">
-    </form>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Seven</title>
+	</head>
+
+	<body>
+
+		<div>
+			<form>
+
+				<textarea name="info" autofocus="true" required="true"></textarea>
+				<div>
+					<input type="text" placeholder="Фамилия" required="true" name="surname">
+					<br>
+					<input type="text" placeholder="Имя" required="true" name="name">
+				</div>
+
+				<div>
+					<label>
+						<b>Специальность</b>
+						<select name="specialties">
+							<option value="ИСиТ">ИСиТ</option>
+							<option value="ПОИТ">ПОИТ</option>
+							<option value="ПОИБМС">ПОИБМС</option>
+							<option value="ДЭВИ">ДЭВИ</option>
+						</select>
+					</label>
+				</div>
+
+				<div>
+					<label>
+						<div>
+							<b>Курс</b>
+						</div>
+						<input type="radio" name="class" value="1" required="true" id="c1"><label for="c1">1</label>
+						<input type="radio" name="class" value="2" id="c2"><label for="c2">2</label>
+						<input type="radio" name="class" value="3" required="true" id="c3"><label for="c3">3</label>
+						<input type="radio" name="class" value="4" required="true" id="c4"><label for="c4">4</label>
+					</label>
+				</div>
+
+				<div>
+					<label>
+						<div>
+							<b>Предметы</b>
+						</div>
+						<input type="checkbox" name="subjects" value="ОИТ">ОИТ
+						<input type="checkbox" name="subjects" value="ОАП">ОАП
+						<input type="checkbox" name="subjects" value="История">История
+						<input type="checkbox" name="subjects" value="Физика">Физика
+						<input type="checkbox" name="subjects" value="Математика">Математика
+					</label>
+				</div>
+				<input type="submit">
+				<input type="reset">
+				<input type="button" value="Напечатать" onclick="printSelected()">
+			</form>
+
+		</div>
+
+		<script src="script.js" ></script>
+	</body>
+
 </html>
