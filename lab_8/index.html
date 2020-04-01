@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="f_task" id="f_task">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    <div class="s_rask" id="s_task">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, est!
+    </div>
+    <img src="sh1.jpg" id="t_task">
+    <div class="f_task" id="fr_task">
+        убивает микробы в горле
+    </div>
+    <img src="sh1.jpg" id="ff_task">
+    <div class="sx_task" id="sx_task">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae esse id ullam maxime dolores. Provident sunt qui nostrum<br> earum eum cumque omnis perspiciatis, dolorem quod deleniti maxime repellat quis hic. Ex repellendus nostrum, natus commodi id vero itaque quas! Illum vero maiores amet omnis tempora, repellat aliquam odio dolore fugiat.
+    </div>
+    <script>
+        first = document.getElementById("f_task");
+        first.onmouseover = function(){
+            this.style.color = "Red";
+        };
+        first.onmouseout = function(){
+            this.style.color = "";
+        };
+
+        var i = 0;
+        second = document.getElementById("s_task")
+        second.onclick = function (){
+            i++
+            if(i % 2 == 0){
+                this.style.fontSize = "12pt";
+            }
+            else{
+                this.style.fontSize = "40pt";
+            }
+        };
+
+        var a = 0;
+        third = document.getElementById("t_task")
+        third.onclick = function (){
+            a++
+            if(a % 2 == 0){
+                this.src = "sh2.jpg";
+            }
+            else{
+                this.src = "sh1.jpg";
+            }
+        };
+
+        var b = 0;
+        fourth = document.getElementById("fr_task")
+        fourth.onclick = function(){
+            b++;
+            if(b % 2 == 0){
+                fourth.innerHTML = "<img src=\"4.jpg\" id=\"f_task\">";
+            }
+            else{
+                fourth.innerHTML = "убивает микробы в горле";
+            }
+        };
+
+        fifth = document.getElementById("ff_task");
+        fifth.onmouseover = function(){
+            this.style.width = "90vh";
+        };
+        fifth.onmouseout = function(){
+            this.style.width = "20%";
+        };
+        v = 0;
+        sixth = document.getElementById("sx_task");
+        sixth.ondblclick = function(){
+            v++;
+            if(v % 2 == 0){
+                sixth.style.border = "3px dotted black";
+            }
+            else{
+                sixth.style.border = "";
+            }
+        };
+    </script>
+</body>
+</html>
