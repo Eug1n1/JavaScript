@@ -12,8 +12,8 @@
         <script>
             var str = "";
 	        for (var i = 0; i < document.all.length; i++) {
-		        let list_childs = document.all[i].tagName;
-			    str += list_childs + " " + i + "<br>";
+		        let list_childs = document.all[i];
+			    str += list_childs.tagName + " " + list_childs.nodeType + " " +  i + "<br>";
 	        }
             document.write(str);
         </script>
