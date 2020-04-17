@@ -3,52 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        .main{
+            height: 600px;
+            width:  100%;
+        }
+    </style>
 </head>
 <body>
-    <img src="1.jpg" alt="" id="immm">
-
-    <script>
-        var ball = document.getElementById('immm');
-
-    ball.onmousedown = function(e) {
-
-        var coords = getCoords(ball);
-        var shiftX = e.pageX - coords.left;
-        var shiftY = e.pageY - coords.top;
-
-        ball.style.position = 'absolute';
-        document.body.appendChild(ball);
-        moveAt(e);
-
-        ball.style.zIndex = 1000; // над другими элементами
-
-        function moveAt(e) {
-            ball.style.left = e.pageX - shiftX + 'px';
-            ball.style.top = e.pageY - shiftY + 'px';
-        }
-
-        document.onmousemove = function(e) {
-            moveAt(e);
-        };
-
-        ball.onmouseup = function() {
-            document.onmousemove = null;
-            ball.onmouseup = null;
-        };
-
-    }
-
-    ball.ondragstart = function() {
-        return false;
-    };
-
-    function getCoords(elem) {   // кроме IE8-
-        var box = elem.getBoundingClientRect();
-        return {
-            top: box.top + pageYOffset,
-            left: box.left + pageXOffset
-        };
-    }
-    </script>
+    <div class="main">
+        <img src="1.jpg" alt="" id="immm">
+    </div>
+    
+    <hr>
+    <div class="main">
+        <img src="2.jpg" alt="" id="ammm">
+    </div>
+    <hr>
+    <canvas id="c1" width="400" height="200"></canvas>
+    <script src="first.js"></script>
+    <script src="second.js"></script>
+    <script src="third.js"></script>
 </body>
 </html>
