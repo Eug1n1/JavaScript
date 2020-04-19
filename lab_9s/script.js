@@ -52,7 +52,7 @@ function HorizontalMove(){
 	}
 }
 
-function SinMove(){
+function Move(){
 	let PosX = 100;
 	let PosY = 200;
 	let nX = 10;

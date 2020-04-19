@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="f_task" id="f_task">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    <div class="s_rask" id="s_task">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, est!
+    </div>
+    <img src="sh1.jpg" id="t_task">
+    <div class="f_task" id="fo_task">
+        убивает микробы в горле
+    </div>
+    <img src="sh1.jpg" id="ff_task" style="width: 30vh;">
+    <div class="sx_task" id="sx_task">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae esse id ullam maxime dolores. Provident sunt qui nostrum<br> earum eum cumque omnis perspiciatis, dolorem quod deleniti maxime repellat quis hic. Ex repellendus nostrum, natus commodi id vero itaque quas! Illum vero maiores amet omnis tempora, repellat aliquam odio dolore fugiat.
+    </div>
+
+    <script>
+        var s = true;
+        var f = true;
+        var e = true;
+        var a = true;
+
+        $("#f_task").mouseover(function(){
+            $("#f_task").css("color", "red")
+        });
+        $("#f_task").mouseout(function(){
+            $("#f_task").css("color", "black")
+        });
+        $("#s_task").click(function(){
+            if(s){
+                $("#s_task").css("font-size","30px");   
+            }else{
+                $("#s_task").css("font-size","16px"); 
+            }      
+            s = !s;
+        });
+
+        $("#t_task").click(function(){
+            if(f){
+                $("#t_task").attr("src","sh1.jpg");   
+            }else{
+                $("#t_task").attr("src","sh2.jpg"); 
+            }      
+            f = !f;
+        });
+
+        $("#fo_task").click(function(){
+            if(e){
+                $("#fo_task").html("<img src=\"4.jpg\" id=\"f_task\">");   
+            }else{
+                $("#fo_task").html("убивает микробы в горле"); 
+            }      
+            e = !e;
+        });
+
+        $("#ff_task").mouseover(function(){
+            $("#ff_task").css("width", "90vh");   
+        });
+        $("#ff_task").mouseout(function(){
+            $("#ff_task").css("width", "30vh");   
+        });
+
+        $("#sx_task").dblclick(function(){
+            if(a){
+                $("#sx_task").css("border", "1px solid black");   
+            }else{
+                $("#sx_task").css("border", "none"); 
+            }      
+            a = !a;  
+        });
+    </script>
+</body>
+</html>

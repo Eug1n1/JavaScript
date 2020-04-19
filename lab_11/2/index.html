@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .shnuk{
+            width: 150px;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script>
+        $( function() {
+            $( "#draggable" ).draggable();
+        } );
+
+    function Move(){
+        document.getElementById("draggable").style.left="8px"
+        $("#draggable").animate({left:500},500);
+    }
+
+    function Move2(){
+        document.getElementById("draggable").style.left = "8px"
+        document.getElementById("draggable").style.top = "8px"
+        $("#draggable").
+    }
+    </script>
+</head>
+<body>
+    <img src="1.jpg" class="shnuk" id="draggable">
+    <input type="button" value="1" onclick="Move()">
+    <input type="button" value="2" onclick="Move2()">
+</body>
+</html>
