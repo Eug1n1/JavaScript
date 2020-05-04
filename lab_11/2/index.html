@@ -15,21 +15,26 @@
             $( "#draggable" ).draggable();
         } );
 
-    function Move(){
-        document.getElementById("draggable").style.left="8px"
-        $("#draggable").animate({left:500},500);
-    }
+        $( function() {
+            $( ".apx" ).draggable();
+        } );
 
-    function Move2(){
-        document.getElementById("draggable").style.left = "8px"
-        document.getElementById("draggable").style.top = "8px"
-        $("#draggable").
-    }
+        function Move(){
+            document.getElementById("draggable").style.left="8px"
+            $("#draggable").animate({left:500},500);
+        }
+
+        function Move2(){
+            document.getElementById("draggable").style.left = "8px"
+            document.getElementById("draggable").style.top = "8px"
+            $("#draggable").animate({left:100, top:100},500).animate({left:"+=100", top:0},500).animate({left:"+=100", top:100},500).animate({left:"+=100", top:0},500).animate({left:"+=100", top:100},500).animate({left:"+=100", top:0},500).animate({left:8},500);
+        }
     </script>
 </head>
 <body>
     <img src="1.jpg" class="shnuk" id="draggable">
     <input type="button" value="1" onclick="Move()">
     <input type="button" value="2" onclick="Move2()">
+    <div class="apx">Передвинь меня</div>
 </body>
 </html>

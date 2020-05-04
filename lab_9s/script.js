@@ -1,4 +1,5 @@
 var ball = document.getElementById('immm');
+var Text = document.getElementById('Text');
 
 ball.onmousedown = function(e) {
 
@@ -77,3 +78,26 @@ function Move(){
 			clearInterval(interval);
 	}
 }
+
+Text.onmousedown = function(elem) {
+	Text.style.position = 'absolute';
+	moveAt(elem);
+  
+	function moveAt(elem) {
+	  Text.style.left = elem.pageX - Text.offsetWidth / 2 + 'px';
+	  Text.style.top = elem.pageY - Text.offsetHeight / 2 + 'px';
+	}
+  
+	document.onmousemove = function(elem) {
+	  moveAt(elem);
+	}
+  
+	Text.onmouseup = function() {
+	  document.onmousemove = null;
+	  Text.onmouseup = null;
+	}
+  
+	Text.ondragstart = function() {
+	return false;
+	}
+  }
